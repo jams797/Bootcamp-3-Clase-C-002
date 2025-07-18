@@ -27,6 +27,9 @@ while (opcionNumero != 0)
         case 2:
             RegistrarLibro();
             break;
+        case 3:
+            EliminarLibroPorIndice();
+            break;
         default:
             Console.WriteLine("Opcion no existe");
             break;
@@ -87,6 +90,50 @@ void RegistrarLibro()
     Console.WriteLine("");
     Console.WriteLine("Libro agregado");
 }
+
+bool ExisteIndice(string indice)
+{
+    int numeroIndice;
+    try
+    {
+        numeroIndice = int.Parse(indice);
+    } catch {
+        Console.WriteLine("El indice ingresado no es un numero");
+        return false;
+    }
+
+    if(numeroIndice < 0)
+    {
+        Console.WriteLine("El indice ingresado debe ser superior a 0");
+        return false;
+    }
+
+    int cantidad = libros.Count();
+
+    if(numeroIndice >= cantidad)
+    {
+        Console.WriteLine("El indice ingresado no existe");
+        return false;
+    }
+
+    return true;
+}
+
+void EliminarLibroPorIndice()
+{
+    Console.WriteLine("Ingrese el indice del libro:");
+    string indice = Console.ReadLine();
+
+    bool existe = ExisteIndice(indice);
+    if(existe)
+    {
+        libros.RemoveAt(int.Parse(indice));
+        Console.WriteLine("Libro eliminado");
+    }
+}
+
+
+
 
 
 
