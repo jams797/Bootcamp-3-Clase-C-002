@@ -90,3 +90,14 @@ void RegistrarLibro()
 
 
 
+
+// 1 Eliminar libro por su numero de indice
+//     1.1 Eliminar el libro en base al indice que ingresa el usuario
+//     1.2 Validar que ese indice ingresado exista
+// 2 Actualizar el año de publicacion de un libro en base a su indice
+//     2.1 Actualizar el año de publicación
+//     2.2 Validar que ese indice ingresado exista
+//     2.3 El año de publicación no exceda del 2025
+//     2.4 El año de publicación no debe ser inferior a 1900
+//     2.5 El año no se caiga si ingreso una letra
+// 3 Controlar que no se caiga el aplicativo si ingreso una letra como opcion en el menu
